@@ -17,6 +17,8 @@ class UserProfile(db.Model):
     biography  = db.Column(db.Text)
     profilePic = db.Column(db.String(255))
     created_on = db.Column(db.Date)
+    #password = db.Column(db.String(255))
+    
     
     
     def __init__(self,first_name,last_name,email,gender,location,biography,profilePic,created_on):
@@ -28,6 +30,7 @@ class UserProfile(db.Model):
         self.biography  = biography
         self.profilePic = profilePic
         self.created_on = created_on
+        #self.password = generate_password_hash(password, method='pbkdf2:sha256')
     
 
     def is_authenticated(self):
